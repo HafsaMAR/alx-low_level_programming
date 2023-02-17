@@ -12,7 +12,8 @@ int main(void)
 	char lower_alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 	int a = 0;
 
-	while(a <= 25){
+	while (a <= 25)
+	{
 		putchar(lower_alphabet[a]);
 			a++;
 	}
