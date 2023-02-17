@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/* more headers goes there */
-/* main - Entry
+/**
+ *  main - Entry
  * Return: Always 0 (success)
- * Description: positive or zero or negative variables */ 
-/* betty style doc for function main goes there */
+ * 
+ * Description: positive or zero or negative variables
+ */ 
+
 int main(void)
 {
 	int n;
