@@ -7,12 +7,12 @@
  */
 int main(void)
 {
-	char Alphabet[] = "bcdefghijklmnopqrstuvwxyz";
+	char Alphabet[] = "abcdefghijklmnopqrstuvwxyz";
 	int a = 0;
-	
+
 	while (a < 26)
 	{
-		if ((Alphabet[a] == 'q') ||( Alphabet[a] == 'e'))
+		if ((Alphabet[a] == 'q') || (Alphabet[a] == 'e'))
 		{
 			a++;
 			continue;
