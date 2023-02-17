@@ -2,7 +2,6 @@
 /**
  * main -Entry
  * Return: Always 0 (success)
- *
  * Description : print array of digit in base 10
  */
 int main(void)
