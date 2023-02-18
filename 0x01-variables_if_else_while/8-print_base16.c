@@ -2,7 +2,7 @@
 /**
  * main print numbers in base 16
  * Return: 0 success
- *
+ * Description print the first single characters in hexadecimal base
  */
 int main(void)
 {
