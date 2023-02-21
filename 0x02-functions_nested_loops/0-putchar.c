@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * main : Entry 
  * Return: ALways 0 (Success)
  *
  * Description: Program that prints _putchar using header file main.h
