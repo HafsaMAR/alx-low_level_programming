@@ -2,8 +2,9 @@
 #include "main.h"
 /**
  * main : programme to print _putchar
- * Description: Program that prints putchar
  * Return: ALways 0 (Success)
+ *
+ * Description: Program that prints _putchar
  */
 int main(void)
 {
