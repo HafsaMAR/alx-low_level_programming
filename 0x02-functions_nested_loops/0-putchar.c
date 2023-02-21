@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * main : programme to print _putchar
+ * main : Entry 
  * Return: ALways 0 (Success)
  *
- * Description: Program that prints _putchar
+ * Description: Program that prints _putchar using header file main.h
  */
 int main(void)
 {
