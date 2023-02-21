@@ -2,9 +2,8 @@
 #include "main.h"
 /**
  * main : programme to print _putchar
- * Return: 0 (success)
- *
- * Description:  print _putchar using _putchar file and getting familiar with headers main.h file
+ * Description: Program that prints putchar
+ * Return: ALways 0 (Success)
  */
 int main(void)
 {
