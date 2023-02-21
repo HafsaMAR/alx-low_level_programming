@@ -2,10 +2,9 @@
 #include "main.h"
 /**
  * main : programme to print _putchar
- * 
  * Return: 0 (success)
  *
- * Description: print _putchar
+ * Description:  print _putchar using _putchar file and getting familiar with headers main.h file
  */
 int main(void)
 {
@@ -18,5 +17,5 @@ int main(void)
 	_putchar('a');
 	_putchar('r');
 	_putchar('\n');
-	return(0);
+	return (0);
 }
