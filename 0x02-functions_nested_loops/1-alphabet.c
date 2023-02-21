@@ -3,12 +3,11 @@
  * main - Entry
  * Return: Always 0 (success)
  *
- * Description: function that prints the alphabet
+ * Description: function that prints the alphabet in lowercase followed by a new line
  */
 void print_alphabet(void)
 {
 	char alpha1;
-	
 	for(alpha1 = 'a'; alpha1 <= 'z'; alpha1++)
 		_putchar(alpha1);
 	_putchar('\n');
