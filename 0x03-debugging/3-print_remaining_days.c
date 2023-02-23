@@ -17,15 +17,9 @@ void print_remaining_days(int month, int day, int year)
 		if (month >= 2 && day >= 60)
 		{
 			day++;
-			if ((month = 4) && (day >= 121)) || ((month = 6) && (day >= 182)) || ((month = 9) && (day >= 274)) || ((month = 11) && (day >= 335));
-			{
-				 printf("Invalid date:");
-			}
-			else
-			{
+
 				printf("Day of the year: %d\n", day);
 				printf("Remaining days: %d\n", 366 - day);
-			}
 		}
 	}
 	else
