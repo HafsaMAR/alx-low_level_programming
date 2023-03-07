@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stderr.h>
+#include <errno.h>
 
 /**
  * main - prints "and that piece of art is useful" - Dora Kprpar, 2015-10=19",
