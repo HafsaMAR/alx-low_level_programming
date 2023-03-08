@@ -17,8 +17,8 @@ void _print_rev_recursion(char *s)
                 temp = s[i];
                 s[i] = s[len - i - 1];
                 s[len - i - 1] = temp;
-        }
-        i++;
-        _print_rev_recursion(s);
+		i++;
+		_print_rev_recursion(s);
+	}
 	_putchar(*s);
 }
