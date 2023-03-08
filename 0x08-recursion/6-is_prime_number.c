@@ -28,6 +28,6 @@ int is_prime_number(int n)
 	if (n == 0)
 		return (0);
 	if (n == 1)
-		return (1);
+		return (0);
 	return (_is_it_prime(n, 2));
 }
