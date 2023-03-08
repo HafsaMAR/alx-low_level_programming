@@ -5,7 +5,7 @@
  * @n: input integer
  * Return: natural root square or -1
  */
-int _is_it_root(int rt, int n)
+int _is_it_root(int rt, int n);
 int _sqrt_recursion(int n)
 {
 	int rt = 0;
@@ -29,7 +29,7 @@ int _sqrt_recursion(int n)
  */
 int _is_it_root(int rt, int n)
 {
-	if (rt * rt == n)
+	if ((rt * rt) == n)
 	{
 		return (rt);
 	}
