@@ -15,7 +15,7 @@ int _is_it_prime(int n, int d)
 		else
 			return (0);
 	}
-	_is_it_prime(n, d + 1)
+	_is_it_prime(n, d + 1);
 }
 
 /**
