@@ -33,5 +33,5 @@ int _is_it_root(int rt, int n)
 	{
 		return (rt);
 	}
-	return (rt + 1, n);
+	return (_is_it_root(rt + 1, n));
 }
