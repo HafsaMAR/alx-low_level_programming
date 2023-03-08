@@ -11,6 +11,7 @@ void _print_rev_recursion(char *s)
          int i, len, temp;
 
         len = strlen(s);
+	i = 0;
         if (i < len / 2)
         {
                 temp = s[i];
