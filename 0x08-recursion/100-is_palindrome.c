@@ -6,7 +6,7 @@
  */
 int lenth_of_string(char *s)
 {
-	int len = 0;
+	int len;
 
 	if (*s)
 	{
@@ -19,7 +19,6 @@ int lenth_of_string(char *s)
  */
 int check_pal(int i, char *s, int len)
 {
-	i = 0;
 	if (*(s + i) != *(s + len - i - 1))
 		return (0);
 	if (i > len / 2)
@@ -35,5 +34,5 @@ int is_palindrome(char *s)
 {
 	if (*s == '\0')
 		return (1);
-	return (check_pal(i, s, lenth_of_string(s));
+	return (check_pal(i, s, lenth_of_string(s)));
 }
