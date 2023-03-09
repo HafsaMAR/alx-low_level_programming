@@ -12,9 +12,7 @@ int is_palindrome(char *s)
 	{
 		return (1);
 	}
-	char c;
-
-	c = puts (_print_rev_recursion(s))
+	c = _putchar(_print_rev_recursion(s));
 	if (*s == c)
 		return (1);
 	else
