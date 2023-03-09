@@ -8,9 +8,9 @@
  */
 int is_palindrome(char *s)
 {
-	if (s = '\0')
+	if (s == '\0')
 		return (1);
-	if (s = _print_rev_recursion(s))
+	if (s == _print_rev_recursion(s))
 		return (1);
 	else
 		return (0);
