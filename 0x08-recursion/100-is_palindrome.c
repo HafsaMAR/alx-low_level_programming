@@ -8,10 +8,13 @@
  */
 int is_palindrome(char *s)
 {
+	char *c;
+
 	if (*s == '\0')
 	{
 		return (1);
 	}
+	_print_rev_recursion(s);
 	c = _putchar(_print_rev_recursion(s));
 	if (*s == c)
 		return (1);
