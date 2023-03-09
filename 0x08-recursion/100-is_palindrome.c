@@ -6,8 +6,9 @@
  */
 int lenth_of_string(char *s)
 {
-	if (*s)
-		return ( 1 + lenth_of_string(s + 1));
+	if (*s == '\0')
+		return (0);
+	return ( 1 + lenth_of_string(s + 1));
 }
 
 /**
