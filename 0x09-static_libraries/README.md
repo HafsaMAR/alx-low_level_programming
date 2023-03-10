@@ -1,2 +1,3 @@
-A library is not a luxury but one of the necessities of life
-Without libraries what have we? We have no past and no future
+ar: program that creates static libraries which are archive files
+c: flage that tells ar to create the library if it doesn't exist
+r: flag that tells ar to replace olderobject files in the library with the new object files.
