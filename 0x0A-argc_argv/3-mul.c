@@ -21,6 +21,6 @@ int main(int argc, char *argv[])
 	{
 		num = atoi(argv[1]) * atoi(argv[2]);
 		printf("%d\n", num);
+		return (0);
 	}
-	return (0);
 }
