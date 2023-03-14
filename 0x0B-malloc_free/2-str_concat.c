@@ -12,6 +12,7 @@ char *str_concat(char *s1, char *s2)
 {
 	unsigned int size1, size2;
 	char *pointer, *ret;
+
 	size1 = 0, size2 = 0;
 	pointer = s1;
 	if (s1)
