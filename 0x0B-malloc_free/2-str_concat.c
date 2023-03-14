@@ -17,22 +17,23 @@ char *str_concat(char *s1, char *s2)
 	if (s1)
 		while (*pointer++)
 			size1++;
-							else
-										s1 = "";
-								pointer = s2;
-									if (s2)
-												while (*pointer++)
-																size2++;
-										else
-													s2 = "";
-											ret = malloc(size1 + size2 + 1);
-												if (!ret)
-															return (NULL);
-													pointer = ret;
-														while (*s1)
-																	*pointer++ = *s1++;
-															while (*s2)
-																		*pointer++ = *s2++;
-																*pointer = 0;
-																	return (ret);
+	else
+		s1 = "";
+	pointer = s2;
+	if (s2)
+		while (*pointer++)
+			size2++;
+	else
+		s2 = "";
+	ret = malloc(size1 + size2 + 1);
+	if (!ret)
+		return (NULL);
+	pointer = ret;
+	while (*s1)
+		*pointer++ = *s1++;
+	while (*s2)
+		*pointer++ = *s2++;
+	*pointer = 0;
+	return (ret);
 }
+
