@@ -1,18 +1,18 @@
 #include <stdio.h>
-#include <stdlin.h>
+#include <stdlib.h>
 #include "main.h"
+#include <limits.h>
 
 /**
  * malloc_checked - function that allocates memory using malloc
  * @b: unsigned integer input
- * Return: 0 success or 98 in failure
+ * Return: pointer (success) or 98 in failure
  */
 void *malloc_checked(unsigned int b)
 {
-	int *ptr;
+	void *ptr = (void *) malloc(b);
 
-	ptr = maloc(b);
-	if (ptr == NULL)
-		return (98);
-	return (0);
+	if (!ptr)
+		exit(98);
+	return ((void *)ptr);
 }
