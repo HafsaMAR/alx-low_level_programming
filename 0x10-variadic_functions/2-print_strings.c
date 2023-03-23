@@ -29,7 +29,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		}
 		else
 		{
-			printf("%s", string);
+			if (i < n - 1)
+				printf("%s ", string);
+			else 
+				printf("%s", string
 		}
 	}
 	va_end(x);
