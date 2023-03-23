@@ -7,12 +7,11 @@
  * @n: number of integer passed to the function
  * Return: 0 success
  */
-int _putchar(char c);
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i, op;
-	
 	va_list x;
+
 	va_start(x, n);
 	for (i = 0; i < n; i++)
 	{
