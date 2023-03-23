@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * print_strings - function that prints strings
- * @seperator: input string in between strings
+ * @separator: input string in between strings
  * @n: number of strings passed to the function
  * Return: 0 (success)
  */
@@ -29,10 +29,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		}
 		else
 		{
-			if (i < n - 1)
-				printf("%s ", string);
-			else
-				printf("%s", string);
+			printf("%s", string);
 		}
 	}
 	va_end(x);
