@@ -14,6 +14,8 @@ void main(int argc, char *argv[])
 
 	void (*adress)(int, char**) =  &main;
 	for (; i < atoi(argv[1]); i++)
-		printf("%02x ", *(unsigned char*)(adress + i));
+		if (argv[2] < 0)
+			printf("Error\n");
+	printf("%02x ", *(unsigned char*)(adress + i));
 	printf("\n");
 }
