@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+#include <stdlib.h>
 /**
  * main - Entry point
  * @argc: counter argument
@@ -13,9 +13,24 @@ void main(int argc, char *argv[])
 	int i;
 	void (*adress)(int, char**) =  &main;
 
+	if (argc != 2)
+	{
+		printf("Error\n");
+		exit(1);
+	}
+	if (atoi(argv[1]) <= 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
 	for (i = 0; i < atoi(argv[1]); i++)
-		if (argv[2] < 0)
-			printf("Error\n");
-	printf("%02x ", *(unsigned char *)(adress + i));
+	{
+		printf("%02x", *(unsigned char *)(adress + i));
+		while (i < (atoi(argv[1]) - 1))
+		{
+			printf(" ");
+			break;
+		}
+	}
 	printf("\n");
 }
