@@ -8,10 +8,10 @@
  * Description: program that prints the opcodes of its own main function
  * Return: void
  */
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int i;
-	void (*adress)(int, char**) =  &main;
+	int (*adress)(int, char**) =  &main;
 
 	if (argc != 2)
 	{
@@ -33,4 +33,5 @@ void main(int argc, char *argv[])
 		}
 	}
 	printf("\n");
+	return (0);
 }
