@@ -10,12 +10,12 @@
  */
 void main(int argc, char *argv[])
 {
-	int i = 0;
-
+	int i;
 	void (*adress)(int, char**) =  &main;
-	for (; i < atoi(argv[1]); i++)
+
+	for (i = 0; i < atoi(argv[1]); i++)
 		if (argv[2] < 0)
 			printf("Error\n");
-	printf("%02x ", *(unsigned char*)(adress + i));
+	printf("%02x ", *(unsigned char *)(adress + i));
 	printf("\n");
 }
