@@ -18,7 +18,7 @@ int main(void)
 	{
 	sum = fib1 + fib2;
 	printf("%lu,", sum);
-	if (count < 91)
+	if (count < 90)
 	{
 		printf(" ");
 	}
