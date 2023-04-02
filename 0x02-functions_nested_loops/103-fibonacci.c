@@ -20,6 +20,6 @@ int main(void)
 	j = k - j;
 	++i;
 	}
-	print("%d\n", sum);
+	printf("%d\n", sum);
 	return (0);
 }
