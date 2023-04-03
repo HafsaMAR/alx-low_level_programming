@@ -12,13 +12,13 @@ int pop_listint(listint_t **head)
 	int t;
 
 	temp = malloc(sizeof(listint_t));
-	if (!head)
+	if (!head || !(*head))
 	{
 		return (0);
 	}
-	temp->n = (*head)->n;
-	*head = (*head)->next;
+	temp = *head;
 	t = temp->n;
+	*head = (*head)->next;
 	free(temp);
 	return (t);
 }
