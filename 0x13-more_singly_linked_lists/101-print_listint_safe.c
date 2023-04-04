@@ -10,15 +10,14 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *current, *rest;
-/*	int i = 0;*/
+	const listint_t *current = head;
+	const listint_t *rest;
 
-	current = head;
-/*	if
+	if (current == NULL)
 	{
-		exit (98);
+		exit(98);
 	}
-*/	rest = current->next;
-	printf("[%p] %d\n",(void*)current, current->n);
-	return(1 + print_listint_safe(rest));
+	rest = current->next;
+	printf("[%p] %d\n", (void *)current, current->n);
+	return (1 + print_listint_safe(rest));
 }
