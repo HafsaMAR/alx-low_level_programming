@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 #include <string.h>
 #include <stdlib.h>
 
@@ -8,10 +7,25 @@
  * @b: input string
  * Return: result of conversion or 0 in failure
  */
+unsigned int power(int num, unsigned int exp)
+{
+	unsigned int i, result;
 
+	result = 1;
+	for (i = 0; i < exp; i++)
+	{
+		if (exp == 0)
+			return (1);
+		else
+		{
+			result *= num;
+		}
+	}
+		return (result);
+}
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int len, i, sum;
+	unsigned int p, len, i, sum;
 
 	i = 0;
 	sum = 0;
@@ -20,7 +34,8 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (!b || (*(b + i) != '1' && *(b + i) != '0'))
 			return (0);
-		sum += (*(b + len - 1 - i) - '0') * pow(2, i);
+		p = power(2, i);
+		sum += (*(b + len - 1 - i) - '0') * p;
 		i++;
 	}
 	return (sum);
