@@ -17,7 +17,7 @@ unsigned int power(int num, unsigned int exp)
 	{
 		if (exp == 0)
 			return (1);
-		result *= num
+		result *= num;
 	}
 	return (result);
 }
