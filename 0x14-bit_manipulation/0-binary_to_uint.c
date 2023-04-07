@@ -3,9 +3,10 @@
 #include <stdlib.h>
 
 /**
- * binary_to_uint - convert from binary to unsigned int
- * @b: input string
- * Return: result of conversion or 0 in failure
+ * power - function to find the power of number
+ * @num: number input
+ * @exp: power
+ * Return: result of the power of num by exp
  */
 unsigned int power(int num, unsigned int exp)
 {
@@ -16,13 +17,17 @@ unsigned int power(int num, unsigned int exp)
 	{
 		if (exp == 0)
 			return (1);
-		else
-		{
-			result *= num;
-		}
+		result *= num
 	}
-		return (result);
+	return (result);
 }
+
+/**
+ * binary_to_uint - convert from binary to unsigned int
+ * @b: input string
+ * Return: result of conversion or 0 in failure
+ */
+
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int p, len, i, sum;
