@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * power - finds the exp of number
@@ -59,18 +60,25 @@ void print_binary(unsigned long int n)
 	max = power(2,ex);
 	_putchar('1');
 	n = n - max;
-	for (i = ex - 1; i > 0; i--)
+	if (n == power(2,ex))
 	{
-		if (n == 0)
-			return;
-		if (n >= power(2, i))
-		{
-			_putchar('1');
-		}
-		else
+		for (i = 0; i < ex; i++)
 		{
 			_putchar('0');
 		}
-		n -= power(2, i);
+		return;
 	}
+	if (n == 0)
+		return;		
+	i = ex - 1;
+	while (n < power(2,i))
+	{
+		_putchar('0');
+		i--;
+	}
+	if (n > power(2,i))
+	{
+		_putchar('1');
+	}
+	n -= power(2,i);
 }
