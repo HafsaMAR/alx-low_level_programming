@@ -31,7 +31,7 @@ unsigned long int greatest_2_exp(unsigned long int n)
 {
 	unsigned long int i = 1;
 
-	while (n >= power(2, i + 1))
+	while (n >= power(2, i))
 	{
 		i++;
 	}
@@ -46,24 +46,14 @@ unsigned long int greatest_2_exp(unsigned long int n)
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int *array;
-	unsigned long int max, i, result;
-
-	max = greatest_2_exp(n);
-	result = 0;
-	if (index > max)
-		return (-1);
-	i = 0;
-	array = malloc(max * sizeof(unsigned long int));
-	if (!array)
-		return (-1);
-	while (n && i <= max)
+	unsigned long int max = 1;
+	while (max <= n)
 	{
-		*(array + max - i) = n % 2;
-		n /= 2;
-		i++;
+		max <<= 1;
 	}
-	result = *(array + max - index);
-	free(array);
-	return (result);
+	if (index >= max >> 1)
+	{
+		return -1;
+	}
+	return (n >> index) & 1;
 }
