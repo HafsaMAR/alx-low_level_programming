@@ -46,10 +46,11 @@ unsigned long int greatest_2_exp(unsigned long int n)
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int *array = NULL;
+	unsigned long int *array;
 	unsigned long int max, i, result;
 
 	max = greatest_2_exp(n);
+	result = 0;
 	if (index > max)
 		return (-1);
 	i = 0;
