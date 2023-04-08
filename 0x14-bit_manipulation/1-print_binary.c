@@ -17,10 +17,7 @@ unsigned long int power(int num, unsigned long int exp)
 	{
 		if (exp == 0)
 			return (1);
-		else
-		{
-			result *= num;
-		}
+		result *= num;
 	}
 	return (result);
 }
@@ -39,7 +36,7 @@ unsigned long int greatest_2_exp(unsigned long int n)
 	{
 		i++;
 	}
-	return(i);
+	return (i);
 }
 
 /**
@@ -57,28 +54,47 @@ void print_binary(unsigned long int n)
 		return;
 	}
 	ex = greatest_2_exp(n);
-	max = power(2,ex);
+	max = power(2, ex);
 	_putchar('1');
 	n = n - max;
-	if (n == power(2,ex))
+	if (n == power(2, ex))
 	{
-		for (i = 0; i < ex; i++)
+		for (i = 0; i <= ex; i++)
 		{
 			_putchar('0');
 		}
 		return;
 	}
-	if (n == 0)
-		return;		
 	i = ex - 1;
-	while (n < power(2,i))
+check:
+	if (n == 0)
+	{
+		return;
+	}
+	else if (n < power(2, i))
 	{
 		_putchar('0');
 		i--;
+		goto check;
 	}
-	if (n > power(2,i))
+	else if (n > power(2, i))
 	{
 		_putchar('1');
+		n -= power(2, i);
+		i--;
+		goto check;
 	}
-	n -= power(2,i);
+	if (n == 2)
+	{
+		_putchar('1');
+		_putchar('0');
+		n -= 2;
+		goto check;
+	}
+	else if (n == 1)
+	{
+		_putchar('1');
+		n -= 1;
+		goto check;
+	}
 }
