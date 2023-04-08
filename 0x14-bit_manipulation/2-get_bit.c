@@ -46,14 +46,12 @@ unsigned long int greatest_2_exp(unsigned long int n)
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int max = 1;
-	while (max <= n)
+	unsigned long int max, mask = 1UL << index;
+
+	max = greatest_2_exp(n);
+	if (index >= max)
 	{
-		max <<= 1;
+		return (-1);
 	}
-	if (index >= max >> 1)
-	{
-		return -1;
-	}
-	return (n >> index) & 1;
+	return ((n & mask) >> index);
 }
