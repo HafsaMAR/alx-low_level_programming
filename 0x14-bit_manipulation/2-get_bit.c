@@ -29,7 +29,7 @@ unsigned long int power(int num, unsigned long int ex)
 
 unsigned long int greatest_2_exp(unsigned long int n)
 {
-	unsigned long int i = 0;
+	unsigned long int i = 1;
 
 	while (n >= power(2, i + 1))
 	{
