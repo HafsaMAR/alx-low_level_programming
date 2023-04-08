@@ -32,7 +32,7 @@ unsigned long int greatest_2_exp(unsigned long int n)
 {
 	unsigned long int i = 0;
 
-	while (n > power(2, i + 1))
+	while (n >= power(2, i))
 	{
 		i++;
 	}
