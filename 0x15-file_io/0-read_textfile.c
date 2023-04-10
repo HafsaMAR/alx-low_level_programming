@@ -1,4 +1,5 @@
 #include <stddef.h>
+#include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -10,23 +11,32 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *fp;
+	int fd, read_bytes, written_bytes;
 	char *buffer;
-	ssize_t i = 0;
 
-	buffer = malloc(letters * sizeof(size_t));
-	if (buffer == NULL)
+	if (filename == NULL)
 		return (0);
-	fp = fopen(filename, "r");
-	if (fp == NULL || letters == 0)
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+		return (0);
+	buffer = malloc(letters * sizeof(char));
+	if (!buffer)
+		return (0);
+	read_bytes = read(fd, buffer, letters);
+	if (read_bytes == -1)
 	{
+		free(buffer);
+		close(fd);
 		return (0);
 	}
-	while (fgets(buffer, letters, fp))
+	written_bytes = write(STDOUT_FILENO, buffer, read_bytes);
+	if (written_bytes == -1 || read_bytes != written_bytes)
 	{
-		printf("%s", buffer);
-		i++;
+		free(buffer);
+		close(fd);
+		return (0);
 	}
-	fclose(fp);
-	return (i);
+	free(buffer);
+	close(fd);
+	return (written_bytes);
 }
