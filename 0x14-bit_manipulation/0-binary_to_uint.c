@@ -13,10 +13,10 @@ unsigned int power(int num, unsigned int exp)
 	unsigned int i, result;
 
 	result = 1;
+	if (exp == 0)
+		return (1);
 	for (i = 0; i < exp; i++)
 	{
-		if (exp == 0)
-			return (1);
 		result *= num;
 	}
 	return (result);
@@ -34,10 +34,12 @@ unsigned int binary_to_uint(const char *b)
 
 	i = 0;
 	sum = 0;
+	if (!b)
+		return (0);
 	len = strlen(b);
 	while (i < len)
 	{
-		if (!b || (*(b + i) != '1' && *(b + i) != '0'))
+		if (*(b + i) != '1' && *(b + i) != '0')
 			return (0);
 		p = power(2, i);
 		sum += (*(b + len - 1 - i) - '0') * p;
