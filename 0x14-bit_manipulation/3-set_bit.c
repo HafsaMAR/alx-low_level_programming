@@ -47,10 +47,9 @@ unsigned long int greatest_2_exp(unsigned long int n)
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int max, mask = 1UL << index;
+	unsigned long int mask = 1UL << index;
 
-	max = greatest_2_exp(*n);
-	if (index > max)
+	if (!n)
 	{
 		return (-1);
 	}
