@@ -9,7 +9,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned long int comp;
 
-	if (!n)
+	if (!n || index > sizeof(unsigned long int) * 8)
 		return (-1);
 	comp = ~(1UL << index);
 	*n &= comp;
