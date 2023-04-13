@@ -1,3 +1,4 @@
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -16,7 +17,7 @@ int main(int argc, char *argv[])
 	int close_from, close_to;
 	int fd_from, fd_to;
 	char buffer[BUFFER_SIZE];
-	ssize_t bytes_written, bytes_read;
+	ssize_t bytes_written, bytes_read, total_bytes_copied = 0;
 
 	if (argc != 3)
 	{
@@ -41,6 +42,11 @@ int main(int argc, char *argv[])
 	while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
 	{
 		bytes_written = write(fd_to, buffer, bytes_read);
+		total_bytes_copied += bytes_read;
+		if (total_bytes_copied >= BUFFER_SIZE)
+		{
+			break;
+		}
 		if (bytes_written != bytes_read)
 		{
 			print_error("Can't write to file");
