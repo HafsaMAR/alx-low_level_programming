@@ -31,11 +31,10 @@ int main(int argc, char *argv[])
 		printf("Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	b_read = read(fd_src, buffer, BUF_SIZE);
-	while (b_read > 0)
+	while (b_read = read(fd_src, buffer, BUF_SIZE) > 0)
 	{
 		b_written = write(fd_dest, buffer, b_read);
-		if (b_read != b_written)
+		if (b_written != b_read)
 		{
 			printf("Error: Can't write to %s\n", argv[2]);
 			exit(99);
