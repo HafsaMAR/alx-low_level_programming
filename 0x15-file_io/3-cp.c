@@ -7,6 +7,13 @@
 
 #define BUFFER_SIZE 1024
 
+/**
+ * main - cp the content of a file to another
+ * @argc: counts arguments
+ * @argv: string passed to the function
+ * Return: 0 success
+ */
+
 int main(int argc, char *argv[])
 {
 	int close_from, close_to;
