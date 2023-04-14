@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 /**
- * append_text - append a text at the end of a file
+ * append_text_to_file - append a text at the end of a file
  * @filename: pointer to string 'name of file'
  * @text_content: text to print
  * Return: 1 success or -1 otherwise
