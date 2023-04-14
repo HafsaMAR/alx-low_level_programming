@@ -3,7 +3,7 @@
 #include <string.h>
 
 /**
- * creat_file - creates a file
+ * create_file - creates a file
  * @filename: pointer to string 'name of the file'
  * @text_content: string terminated by NULL
  * Return: 1 success or -1 otherwise
