@@ -4,14 +4,16 @@
 #include <fcntl.h>
 #include <elf.h>
 
-void read_elfheader(int fd, Elf64_Ehdr *h) {
+void read_elfheader(int fd, Elf64_Ehdr *h)
+{
     if (read(fd, h, sizeof(Elf64_Ehdr)) != sizeof(Elf64_Ehdr)) {
         perror("Error: read");
         exit(98);
     }
 }
 
-void check_file(Elf64_Ehdr *h) {
+void check_file(Elf64_Ehdr *h)
+{
     if (h->e_ident[EI_MAG0] != ELFMAG0 ||
         h->e_ident[EI_MAG1] != ELFMAG1 ||
         h->e_ident[EI_MAG2] != ELFMAG2 ||
@@ -21,7 +23,9 @@ void check_file(Elf64_Ehdr *h) {
     }
 }
 
-void display_info(Elf64_Ehdr *h) {
+void display_info(Elf64_Ehdr *h)
+{
+    int i;
     printf("Magic:   ");
     for (int i = 0; i < EI_NIDENT; i++) {
         printf("%02x ", h->e_ident[i]);
@@ -42,7 +46,9 @@ void display_info(Elf64_Ehdr *h) {
     printf("%#010x\n", (unsigned int)h->e_entry);
 }
 
-int main(int ac, char *av[]) {
+int main(int ac, char *av[])
+{
+    Elf64_Ehdr header;
     if (ac != 2) {
         fprintf(stderr, "Usage: elf_header elf_filename\n");
         return (98);
@@ -53,8 +59,6 @@ int main(int ac, char *av[]) {
         perror("open");
         return (98);
     }
-
-    Elf64_Ehdr header;
     read_elfheader (fd, &header);
     check_file(&header);
     display_info(&header);
