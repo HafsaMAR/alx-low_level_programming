@@ -4,7 +4,12 @@
 #include <fcntl.h>
 #include <elf.h>
 
-
+/**
+ * read_elfheader - read the elf file
+ * @fd: file descriptor
+ * @h: header file
+ * Return : void
+ */
 
 void read_elfheader(int fd, Elf64_Ehdr *h)
 {
@@ -14,6 +19,12 @@ void read_elfheader(int fd, Elf64_Ehdr *h)
 		exit(98);
 	}
 }
+
+/**
+ * check_file - checks if the file is an elf header file
+ * @h : header file
+ * Return : void
+ */
 
 void check_file(Elf64_Ehdr *h)
 {
@@ -27,9 +38,16 @@ void check_file(Elf64_Ehdr *h)
 	}
 }
 
+/**
+ * display_info - prints the info of the header file to stdout
+ * @h: elf header file
+ * Return : void
+ */
+
 void display_info(Elf64_Ehdr *h)
 {
 	int i;
+
 	printf("Magic:   ");
 	for (i = 0; i < EI_NIDENT; i++)
 	{
@@ -52,10 +70,18 @@ void display_info(Elf64_Ehdr *h)
 	printf("%#010x\n", (unsigned int)h->e_entry);
 }
 
+/**
+ * main - entry point
+ * @ac: number of arguments
+ * @av: pointer to string
+ * Return: 0 on success or 98 otherwise
+ */
+
 int main(int ac, char *av[])
 {
 	Elf64_Ehdr header;
 	int fd;
+
 	if (ac != 2)
 	{
 		fprintf(stderr, "Usage: elf_header elf_filename\n");
@@ -67,7 +93,7 @@ int main(int ac, char *av[])
 		perror("open");
 		return (98);
 	}
-	read_elfheader (fd, &header);
+	read_elfheader(fd, &header);
 	check_file(&header);
 	display_info(&header);
 	close(fd);
