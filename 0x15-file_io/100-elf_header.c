@@ -27,7 +27,7 @@ void display_info(Elf64_Ehdr *h)
 {
     int i;
     printf("Magic:   ");
-    for (int i = 0; i < EI_NIDENT; i++) {
+    for (i = 0; i < EI_NIDENT; i++) {
         printf("%02x ", h->e_ident[i]);
     }
     printf("\nClass:                             ");
@@ -49,12 +49,13 @@ void display_info(Elf64_Ehdr *h)
 int main(int ac, char *av[])
 {
     Elf64_Ehdr header;
+    int fd;
     if (ac != 2) {
         fprintf(stderr, "Usage: elf_header elf_filename\n");
         return (98);
     }
 
-    int fd = open(av[1], O_RDONLY);
+    fd = open(av[1], O_RDONLY);
     if (fd < 0) {
         perror("open");
         return (98);
