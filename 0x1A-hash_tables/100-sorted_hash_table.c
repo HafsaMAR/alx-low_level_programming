@@ -31,7 +31,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 	ht->array = node;
 	ht->shead = NULL;
 	ht->stail = NULL;
-    return (ht);
+	return (ht);
 }
 
 /**
@@ -111,4 +111,31 @@ void shash_table_print_rev(const shash_table_t *ht)
 		node = node->sprev;
 	}
 	printf("}\n");
+}
+
+/**
+ * shash_table_delete - frees the table
+ * @ht: pointer to head of table
+*/
+void shash_table_delete(shash_table_t *ht)
+{
+	unsigned long int i;
+	shash_node_t *node, *temp;
+
+	if (!ht)
+		return;
+	for (i = 0; i < ht->size; i++)
+	{
+		node = ht->array[i];
+		while (node)
+		{
+			temp = node->next;
+			free(node->key);
+			free(node->value);
+			free(node);
+			node = temp;
+		}
+	}
+	free(ht->array);
+	free(ht);
 }
