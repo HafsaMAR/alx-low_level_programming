@@ -31,6 +31,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 	ht->array = node;
 	ht->shead = NULL;
 	ht->stail = NULL;
+    return (ht);
 }
 
 /**
