@@ -80,8 +80,35 @@ void shash_table_print(const shash_table_t *ht)
 		}
 			else
 				printf(", '%s': '%s'", node->key, node->value);
-		node = node->next;
+		node = node->snext;
 	}
 	printf("}\n");
 }
 
+/**
+ * shash_table_print_rev - function that prints the element in reversed order
+ * @ht: pointer to hash table structure
+*/
+void shash_table_print_rev(const shash_table_t *ht)
+{
+	unsigned int check = 0;
+	shash_node_t *node = ht->stail;
+
+	if (!ht)
+	{
+		return;
+	}
+	printf("{");
+	while (node)
+	{
+		if (check == 0)
+		{
+			printf("'%s': '%s'", node->key, node->value);
+			check = 1;
+		}
+			else
+				printf(", '%s': '%s'", node->key, node->value);
+		node = node->sprev;
+	}
+	printf("}\n");
+}
