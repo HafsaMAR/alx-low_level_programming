@@ -22,7 +22,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
             if (value == NULL)
                 return (0);
             temp->value = strdup(value);
-            return (0);
+            return (1);
         }
         temp = temp->next;
     }
