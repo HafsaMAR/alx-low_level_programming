@@ -1,11 +1,20 @@
+# Define the C compiler to use
 CC = gcc
+
+# Define the source files
 SRC = $(wildcard *.c)
-OBJ = (patsubst %.c,%.o,$(SRC))
+
+# Define the object files
+OBJ = $(SRC:.c=.o)
+
+# Define the output file
 NAME = school
 
-%.o: %.c
-		$(CC) -c -o $@ $<
-all: $(OBJ)
-		$(CC) $(OBJ) -o $(NAME)
+# The all rule
+all: $(NAME)
 
-	
+$(NAME): $(OBJ)
+	$(CC) -o $(NAME) $(OBJ)
+
+%.o: %.c
+	$(CC) -c $< -o $@
