@@ -21,14 +21,11 @@ int jump_search(int *array, size_t size, int value)
 	while (array && jump_num < (int) size / jump)
 	{
 		/* if the value is less than the highest value do linear search*/
-		
 		printf("Value checked array[%d] = [%d]\n", low_index, array[low_index]);
 		if (value <= array[high_index])
 		{
-			
 			printf("Value found between indexes [%d] and [%d]\n",
 			array[low_index], array[high_index]);
-			
 			for (i = low_index; i < high_index; i++)
 			{
 				printf("Value checked array[%d] = [%d]\n", i, array[i]);
